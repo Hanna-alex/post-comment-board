@@ -1,5 +1,4 @@
 main {
 	min-height: 100vh;
-	padding: 20px 0;
-	margin: var(--header-height) 0 var(--footer-height) 0;
+	padding: calc(var(--header-height) + 20px) 0 calc(var(--footer-height) + 20px) 0;
 }
