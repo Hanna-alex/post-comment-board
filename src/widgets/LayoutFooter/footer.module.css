@@ -1,0 +1,10 @@
+.footer {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: var(--footer-height);
+	box-shadow: 0 0 16px rgb(199, 199, 199, 0.5);
+	padding: 16px 0;
+}

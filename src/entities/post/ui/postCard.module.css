@@ -1,0 +1,7 @@
+.postCard {
+	margin-bottom: 16px;
+}
+.title {
+	color: var(--green-color);
+	margin-bottom: 8px;
+}
