@@ -1,9 +1,21 @@
-:root {
+:root[data-theme='light'] {
+	--bg-color: #eae7dc;
+	--text-color: #8e8d8a;
+	--post-title: #e98074;
+
+	--hover-btn-color: #14a76c;
+}
+
+:root[data-theme='dark'] {
 	--bg-color: #272727;
 	--text-color: #747474;
+	--post-title: #14a76c;
+	--hover-btn-color: #ffe400;
+}
+
+:root {
 	--orange-color: #ff652f;
 	--yellow-color: #ffe400;
-	--green-color: #14a76c;
 
 	--footer-height: 60px;
 	--header-height: 80px;

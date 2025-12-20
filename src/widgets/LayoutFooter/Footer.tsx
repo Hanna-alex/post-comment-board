@@ -1,4 +1,4 @@
-import { Container } from '../../shared'
+import { ContentWrapper } from '../../shared/layouts'
 import styles from './footer.module.css'
 
 export const Footer = () => {
@@ -6,9 +6,9 @@ export const Footer = () => {
 
 	return (
 		<footer className={styles.footer}>
-			<Container>
+			<ContentWrapper>
 				<span>© {year}</span>
-			</Container>
+			</ContentWrapper>
 		</footer>
 	)
 }

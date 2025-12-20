@@ -1,14 +1,18 @@
+import React from 'react'
 import { PostCard } from '../../entities'
-import { Container, posts } from '../../shared'
+import { posts } from '../../shared/api'
+import { ContentWrapper } from '../../shared/layouts'
 
 export const PostList = () => {
 	return (
-		<Container>
+		<ContentWrapper>
 			<ul>
 				{posts.map((post) => (
-					<PostCard key={post.id} {...post} />
+					<React.Fragment key={post.id}>
+						<PostCard {...post} />
+					</React.Fragment>
 				))}
 			</ul>
-		</Container>
+		</ContentWrapper>
 	)
 }

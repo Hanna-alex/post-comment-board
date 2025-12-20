@@ -1,12 +1,17 @@
-import { Container } from '../../shared'
+import { ThemeSwitcher } from '../../features'
+import { ContentWrapper } from '../../shared/layouts'
+import { ProjectInfoButton } from '../ProjectInfoButton/ProjectInfoButton'
+
 import styles from './header.module.css'
 
 export const Header = () => {
 	return (
 		<header className={styles.header}>
-			<Container>
+			<ContentWrapper>
 				<h2>Тут логотип</h2>
-			</Container>
+				<ProjectInfoButton />
+				<ThemeSwitcher />
+			</ContentWrapper>
 		</header>
 	)
 }
