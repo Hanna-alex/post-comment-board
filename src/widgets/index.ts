@@ -1,4 +1,5 @@
 export * from './LayoutFooter/Footer'
 export * from './LayoutHeader/Header'
 export * from './PostList/PostList'
+export * from './PostList/PostListWithLoading'
 export * from './ProjectInfoButton/ProjectInfoButton'

@@ -1,1 +1,1 @@
-export * from './dataPosts/dataPosts'
+export * from './postsApi'

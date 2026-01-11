@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Button, Modal } from '../../shared/iu'
+import { Button, Modal } from '../../shared/ui'
 
 export const ProjectInfoButton = () => {
 	const [isModalOpen, setModalOpen] = useState(false)
@@ -8,8 +8,9 @@ export const ProjectInfoButton = () => {
 		<>
 			<Button onClick={() => setModalOpen(true)}>О проекте</Button>
 			<Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)}>
-				<h2>О проекте</h2>
-				<p>Здесь информация о проекте...</p>
+				<Modal.Header>О проекте</Modal.Header>
+				<Modal.Body>Здесь информация о проекте...</Modal.Body>
+				<Modal.Footer onClose={() => setModalOpen(false)}></Modal.Footer>
 			</Modal>
 		</>
 	)

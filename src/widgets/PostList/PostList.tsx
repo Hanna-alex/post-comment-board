@@ -1,18 +1,19 @@
-import React from 'react'
+import React, { type FC } from 'react'
 import { PostCard } from '../../entities'
-import { posts } from '../../shared/api'
-import { ContentWrapper } from '../../shared/layouts'
+import type { IPost } from '../../shared/types'
 
-export const PostList = () => {
+interface PostListProps {
+	posts: IPost[] | undefined
+}
+
+export const PostList: FC<PostListProps> = ({ posts }) => {
 	return (
-		<ContentWrapper>
-			<ul>
-				{posts.map((post) => (
-					<React.Fragment key={post.id}>
-						<PostCard {...post} />
-					</React.Fragment>
-				))}
-			</ul>
-		</ContentWrapper>
+		<ul>
+			{posts?.map((post) => (
+				<React.Fragment key={post.id}>
+					<PostCard {...post} />
+				</React.Fragment>
+			))}
+		</ul>
 	)
 }

@@ -1,4 +1,4 @@
-import type { IChildrenProps } from '../types/iChildren'
+import type { IChildrenProps } from '../types/children'
 import styles from './contentWrapper.module.css'
 
 export const ContentWrapper: React.FC<IChildrenProps> = ({ children }) => {
