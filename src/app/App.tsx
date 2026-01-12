@@ -1,18 +1,23 @@
 import { Header, Footer } from '../widgets'
 import { ThemeProvider } from '../shared/lib'
-import { PostsPage } from '../page'
+import { PostsPage } from '../pages'
 import styles from './app.module.css'
+import { BrowserRouter } from 'react-router-dom'
+import { AppRouter } from './providers'
 
 function App() {
 	return (
-		<ThemeProvider>
-			<Header />
-			<main className={styles.main}>
-				<PostsPage />
-			</main>
+		<BrowserRouter>
+			<AppRouter />
+			<ThemeProvider>
+				<Header />
+				<main className={styles.main}>
+					<PostsPage />
+				</main>
 
-			<Footer />
-		</ThemeProvider>
+				<Footer />
+			</ThemeProvider>
+		</BrowserRouter>
 	)
 }
 
