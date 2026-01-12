@@ -1,8 +1,8 @@
-import type { FC, MouseEvent } from 'react'
+import type { FC } from 'react'
 import styles from './button.module.css'
 
 interface IButtonProps {
-	onClick: (event: MouseEvent<HTMLButtonElement>) => void
+	onClick?: () => void
 	children: React.ReactNode
 	type?: 'button' | 'submit' | 'reset'
 	className?: string

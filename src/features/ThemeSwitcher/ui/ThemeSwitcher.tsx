@@ -1,5 +1,5 @@
-import { useTheme } from '../../../shared/lid'
-import { Button } from '../../../shared/iu'
+import { useTheme } from '../../../shared/lib'
+import { Button } from '../../../shared/ui'
 
 export const ThemeSwitcher = () => {
 	const { theme, toggleTheme } = useTheme()

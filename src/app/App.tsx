@@ -1,5 +1,6 @@
-import { ThemeProvider } from '../shared/lid'
-import { Header, PostList, Footer } from '../widgets'
+import { Header, Footer } from '../widgets'
+import { ThemeProvider } from '../shared/lib'
+import { PostsPage } from '../page'
 import styles from './app.module.css'
 
 function App() {
@@ -7,7 +8,7 @@ function App() {
 		<ThemeProvider>
 			<Header />
 			<main className={styles.main}>
-				<PostList />
+				<PostsPage />
 			</main>
 
 			<Footer />
