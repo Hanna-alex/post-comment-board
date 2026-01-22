@@ -1,23 +1,25 @@
 import { Header, Footer } from '../widgets'
 import { ThemeProvider } from '../shared/lib'
-import { PostsPage } from '../pages'
-import styles from './app.module.css'
 import { BrowserRouter } from 'react-router-dom'
+import { Provider } from 'react-redux'
 import { AppRouter } from './providers'
+import { store } from './providers'
+import styles from './app.module.css'
 
 function App() {
 	return (
-		<BrowserRouter>
-			<AppRouter />
-			<ThemeProvider>
-				<Header />
-				<main className={styles.main}>
-					<PostsPage />
-				</main>
+		<Provider store={store}>
+			<BrowserRouter>
+				<ThemeProvider>
+					<Header />
+					<main className={styles.main}>
+						<AppRouter />
+					</main>
 
-				<Footer />
-			</ThemeProvider>
-		</BrowserRouter>
+					<Footer />
+				</ThemeProvider>
+			</BrowserRouter>
+		</Provider>
 	)
 }
 

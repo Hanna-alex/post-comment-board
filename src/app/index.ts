@@ -1,2 +1,2 @@
 export { default } from './App.tsx'
-export * from './store.ts'
+export * from './providers/store/store.ts'

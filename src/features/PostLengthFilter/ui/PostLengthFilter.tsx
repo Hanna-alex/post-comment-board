@@ -12,7 +12,7 @@ export const PostLengthFilter: FC<IPostLengthFilterProps> = ({ minLength, onChan
 	}
 
 	return (
-		<div className={styles.wrapper}>
+		<form className={styles.wrapper}>
 			<label className={styles.label} htmlFor='minLenght'>
 				Минимальная длина заголовка:
 			</label>
@@ -22,7 +22,8 @@ export const PostLengthFilter: FC<IPostLengthFilterProps> = ({ minLength, onChan
 				value={minLength}
 				onChange={handleChange}
 				min={0}
+				id='minLenght'
 			/>
-		</div>
+		</form>
 	)
 }

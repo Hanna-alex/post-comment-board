@@ -10,10 +10,11 @@ import {
 
 export const AppRouter = () => {
 	const routes = useRoutes([
+		{ path: '/', element: <PostsPage /> },
 		{ path: '/posts', element: <PostsPage /> },
 		{ path: '/posts/:id', element: <PostDetailPage /> },
 		{ path: '/users/:id/albums', element: <UserAlbumsPage /> },
-		{ path: 'users/:id/todos', element: <UserTodosPage /> },
+		{ path: '/users/:id/todos', element: <UserTodosPage /> },
 		{ path: '/users/:id/posts', element: <UserPostsPage /> },
 		{ path: '/albums/:id/photos', element: <AlbumPhotosPage /> },
 	])
