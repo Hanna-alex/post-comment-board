@@ -1,18 +1,11 @@
-import React, { type FC } from 'react'
 import { PostCard } from '../../entities'
-import type { IPost } from '../../shared/types'
+import type { PostListProps } from './model/types'
 
-interface PostListProps {
-	posts: IPost[] | undefined
-}
-
-export const PostList: FC<PostListProps> = ({ posts }) => {
+export const PostList = ({ posts }: PostListProps) => {
 	return (
 		<ul>
 			{posts?.map((post) => (
-				<React.Fragment key={post.id}>
-					<PostCard {...post} />
-				</React.Fragment>
+				<PostCard {...post} />
 			))}
 		</ul>
 	)

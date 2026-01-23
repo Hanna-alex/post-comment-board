@@ -1,14 +1,10 @@
 import { useState, useEffect } from 'react'
-
-import { ThemeContext } from './ThemeContext'
-
-import type { FC } from 'react'
-import type { IChildrenProps } from '../../types'
+import type { PropsWithChildren } from 'react'
+import { ThemeContext, type Theme } from './ThemeContext'
 
 //Контекст для хранения текущей темы и функции переключателя
-export type Theme = 'light' | 'dark'
 
-export const ThemeProvider: FC<IChildrenProps> = ({ children }) => {
+export const ThemeProvider = ({ children }: PropsWithChildren) => {
 	const [theme, setTheme] = useState<Theme>('dark')
 
 	const toggleTheme = () => {

@@ -1,6 +1,6 @@
-import type { IChildrenProps } from '../types/children'
-import stytles from './mainLayout.module.css'
+import type { PropsWithChildren } from 'react'
+import styles from './mainLayout.module.css'
 
-export const MainLayout: React.FC<IChildrenProps> = ({ children }) => {
-	return <div className={stytles.main}>{children}</div>
+export const MainLayout = ({ children }: PropsWithChildren) => {
+	return <div className={styles.main}>{children}</div>
 }

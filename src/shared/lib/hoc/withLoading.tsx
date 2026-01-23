@@ -1,19 +1,44 @@
-import { type FC } from 'react'
+// import type { ComponentType, ReactElement } from 'react'
 
-type WithLoadingProps = {
+// export interface WithLoadingProps {
+// 	isLoading: boolean
+// }
+
+// // Универсальный HOC, который принимает компонент и возвращает компонент с loader
+// export function withLoader<P>(WrappedComponent: ComponentType<P>) {
+// 	const Component = (props: P & WithLoadingProps): ReactElement => {
+// 		const { isLoading, ...restProps } = props
+
+// 		if (isLoading) {
+// 			return <div>Загрузка...</div>
+// 		}
+// 		return <WrappedComponent {...(restProps as P)} />
+// 	}
+
+// 	Component.displayName = `withLoader(${WrappedComponent.displayName ?? WrappedComponent.name ?? 'Component'})`
+// 	return Component
+// }
+
+import type { ComponentType, ReactElement } from 'react'
+
+export interface WithLoadingProps {
 	isLoading: boolean
 }
 
-// Универсальный HOC, который принимает компонент и возвращает компонент с loader
-export function withLoader<P extends object>(
-	WrappedComponent: React.ComponentType<P>
-): FC<P & WithLoadingProps> {
-	const Component: FC<P & WithLoadingProps> = ({ isLoading, ...props }) => {
+export function withLoader<P extends object>(WrappedComponent: ComponentType<P>) {
+	const Component = (props: P & WithLoadingProps): ReactElement => {
+		const { isLoading, ...restProps } = props
+
 		if (isLoading) {
 			return <div>Загрузка...</div>
 		}
-		return <WrappedComponent {...(props as P)} />
+
+		return <WrappedComponent {...(restProps as P)} />
 	}
+
+	Component.displayName = `withLoader(${
+		WrappedComponent.displayName ?? WrappedComponent.name ?? 'Component'
+	})`
 
 	return Component
 }

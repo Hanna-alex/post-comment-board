@@ -1,7 +1,7 @@
 import { type FC } from 'react'
-import type { IComment } from '../../../shared/types'
+import type { Comment } from '../model/types'
 
-export const CommentCard: FC<IComment> = ({ body, name, id, email }) => {
+export const CommentCard: FC<Comment> = ({ body, name, id, email }) => {
 	return (
 		<li key={`com${id}`}>
 			<p>{body}</p>

@@ -1,18 +1,14 @@
-import type { FC, ReactNode } from 'react'
+import type { PropsWithChildren } from 'react'
 import { Button } from '../Button/Button'
-
 import styles from './footer.module.css'
 
-type ModalFooterProps = {
+interface ModalFooterProps {
 	onClose?: () => void
-	children?: ReactNode
 }
 
-export const Footer: FC<ModalFooterProps> = ({ children, onClose }) => (
+export const Footer = ({ children, onClose }: PropsWithChildren<ModalFooterProps>) => (
 	<div className={styles.footer}>
-		{children ? (
-			children
-		) : (
+		{children ?? (
 			<Button onClick={onClose} className={'closeBtn'}>
 				Закрыть
 			</Button>

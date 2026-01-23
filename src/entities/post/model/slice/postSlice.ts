@@ -1,8 +1,8 @@
 import { createSlice, createEntityAdapter, type PayloadAction } from '@reduxjs/toolkit'
 import type { RootState } from '../../../../app'
-import type { IPost } from '../../../../shared/types'
+import type { Post } from '../types'
 
-const postsAdapter = createEntityAdapter<IPost>() // selectId в новых версиях >=2.x не передается как опция, а автоматически использует ID, указывает есмли _id не стандартный
+const postsAdapter = createEntityAdapter<Post>() // selectId в новых версиях >=2.x не передается как опция, а автоматически использует ID, указывает есмли _id не стандартный
 
 const initialState = postsAdapter.getInitialState({
 	selectedPostId: null as number | null,
@@ -12,7 +12,7 @@ const postSlice = createSlice({
 	name: 'post',
 	initialState,
 	reducers: {
-		setPosts(state, action: PayloadAction<IPost[]>) {
+		setPosts(state, action: PayloadAction<Post[]>) {
 			postsAdapter.setAll(state, action.payload)
 		},
 		selectPost(state, action: PayloadAction<number>) {

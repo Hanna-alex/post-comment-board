@@ -1,7 +1,6 @@
-import type { FC } from 'react'
-import type { IChildrenProps } from '../../types'
+import type { PropsWithChildren } from 'react'
 import styles from './header.module.css'
 
-export const Header: FC<IChildrenProps> = ({ children }) => (
+export const Header = ({ children }: PropsWithChildren) => (
 	<h2 className={styles.header}>{children}</h2>
 )

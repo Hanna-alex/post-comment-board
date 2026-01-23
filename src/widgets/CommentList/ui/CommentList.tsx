@@ -1,13 +1,9 @@
-import { useCallback, useState, type FC } from 'react'
+import { useCallback, useState } from 'react'
 import { CommentCard } from '../../../entities'
 import { Button } from '../../../shared/ui'
-import type { IComment } from '../../../shared/types'
+import type { CommentListProps } from '../model/types'
 
-interface ICommentListProps {
-	comments: IComment[]
-}
-
-export const CommentList: FC<ICommentListProps> = ({ comments }) => {
+export const CommentList = ({ comments }: CommentListProps) => {
 	const [isCollapsed, setIsCollapsed] = useState(true)
 
 	const toggleCollapsed = useCallback(() => {

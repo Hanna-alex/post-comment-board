@@ -1,5 +1,5 @@
 import { createPortal } from 'react-dom'
-import type { FC, ReactNode } from 'react'
+import type { MouseEventHandler, PropsWithChildren, ReactElement } from 'react'
 
 import { Header } from './Header'
 import { Body } from './Body'
@@ -7,48 +7,28 @@ import { Footer } from './Footer'
 
 import styles from './modal.module.css'
 
-interface IModalProps {
+interface ModalProps {
 	isOpen: boolean
 	onClose: () => void
-	children?: ReactNode
 }
 
-interface ICompoundComponent {
-	Header: typeof Header
-	Body: typeof Body
-	Footer: typeof Footer
+interface ModalOverlayProps {
+	onClick: MouseEventHandler<HTMLDivElement>
 }
 
-// export const Modal: FC<IModalProps> = ({ isOpen, onClose, children }) => {
-// 	if (!isOpen) return null
-
-// 	return ReactDOM.createPortal(
-// 		<div className={styles.overlay}>
-// 			<div className={styles.modal}>
-// 				<Button onClick={onClose} className={'closeBtn'}>
-// 					Закрыть
-// 				</Button>
-// 				{children}
-// 			</div>
-// 		</div>,
-// 		document.body
-// 	)
-// }
-
-const ModalOverlay: FC<{ onClick: () => void; children: ReactNode }> = ({
-	onClick,
-	children,
-}) => (
+const ModalOverlay = ({ onClick, children }: PropsWithChildren<ModalOverlayProps>) => (
 	<div className={styles.overlay} onClick={onClick}>
 		{children}
 	</div>
 )
 
-export const Modal: FC<IModalProps> & ICompoundComponent = ({
-	isOpen,
-	onClose,
-	children,
-}) => {
+type ModalComponent = (props: PropsWithChildren<ModalProps>) => ReactElement | null
+
+export const Modal: ModalComponent & {
+	Header: typeof Header
+	Body: typeof Body
+	Footer: typeof Footer
+} = ({ isOpen, onClose, children }) => {
 	if (!isOpen) return null
 
 	return createPortal(
@@ -57,7 +37,7 @@ export const Modal: FC<IModalProps> & ICompoundComponent = ({
 				{children}
 			</div>
 		</ModalOverlay>,
-		document.body
+		document.body,
 	)
 }
 

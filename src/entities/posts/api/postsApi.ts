@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import type { IPost } from '../../../shared/types'
+import type { Post } from '../../post/model/types'
 
 export const postsApi = createApi({
 	reducerPath: 'postsApi',
@@ -8,7 +8,7 @@ export const postsApi = createApi({
 	}),
 	tagTypes: ['Post'],
 	endpoints: (builder) => ({
-		getPosts: builder.query<IPost[], void>({
+		getPosts: builder.query<Post[], void>({
 			query: () => 'posts',
 			providesTags: (result) =>
 				result
@@ -22,7 +22,7 @@ export const postsApi = createApi({
 					: [{ type: 'Post', id: 'LIST' }],
 		}),
 
-		getPostsByUserId: builder.query<IPost[], number>({
+		getPostsByUserId: builder.query<Post[], number>({
 			query: (userId) => `posts?userId=${userId}`,
 			providesTags: (result) =>
 				result
@@ -36,12 +36,12 @@ export const postsApi = createApi({
 					: [{ type: 'Post', id: 'LIST' }],
 		}),
 
-		getPostById: builder.query<IPost, number>({
+		getPostById: builder.query<Post, number>({
 			query: (postId) => `posts/${postId}`,
 			providesTags: (_r, _e, id) => [{ type: 'Post', id }],
 		}),
 
-		addPost: builder.mutation<IPost, Partial<IPost>>({
+		addPost: builder.mutation<Post, Partial<Post>>({
 			query: (body) => ({
 				url: 'posts',
 				method: 'POST',

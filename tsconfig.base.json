@@ -1,0 +1,12 @@
+{
+	"compilerOptions": {
+		"strict": true,
+		"noImplicitAny": true,
+		"strictNullChecks": true,
+		"noUncheckedIndexedAccess": true,
+		"forceConsistentCasingInFileNames": true,
+		"skipLibCheck": false, // true для разрабоки, false для учебы с наставником
+		"esModuleInterop": true,
+		"resolveJsonModule": true
+	}
+}

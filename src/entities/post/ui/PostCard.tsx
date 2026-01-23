@@ -1,9 +1,14 @@
-import type { IPost } from '../../../shared/types'
 import styles from './postCard.module.css'
 
-export const PostCard: React.FC<IPost> = ({ title, body }) => {
+export interface PostCardProps {
+	title: string
+	body: string
+	id: number
+}
+
+export const PostCard = ({ title, body, id }: PostCardProps) => {
 	return (
-		<li className={styles.postCard}>
+		<li className={styles.postCard} key={id}>
 			<h3 className={styles.title}>{title}</h3>
 			<p>{body}</p>
 		</li>

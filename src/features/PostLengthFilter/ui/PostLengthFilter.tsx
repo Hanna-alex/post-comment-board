@@ -1,13 +1,13 @@
-import { type FC } from 'react'
+import type { ChangeEventHandler } from 'react'
 import styles from './postLengthFilter.module.css'
 
-interface IPostLengthFilterProps {
+interface PostLengthFilterProps {
 	minLength: number
-	onChange: (lenght: number) => void
+	onChange: (length: number) => void
 }
 
-export const PostLengthFilter: FC<IPostLengthFilterProps> = ({ minLength, onChange }) => {
-	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+export const PostLengthFilter = ({ minLength, onChange }: PostLengthFilterProps) => {
+	const handleChange: ChangeEventHandler<HTMLInputElement> = (e) => {
 		onChange(Number(e.target.value))
 	}
 
@@ -17,12 +17,12 @@ export const PostLengthFilter: FC<IPostLengthFilterProps> = ({ minLength, onChan
 				Минимальная длина заголовка:
 			</label>
 			<input
+				id='minLenght'
 				className={styles.input}
 				type='number'
 				value={minLength}
 				onChange={handleChange}
 				min={0}
-				id='minLenght'
 			/>
 		</form>
 	)

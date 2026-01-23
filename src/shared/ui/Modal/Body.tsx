@@ -1,8 +1,7 @@
-import type { FC } from 'react'
-import type { IChildrenProps } from '../../types'
+import type { PropsWithChildren } from 'react'
 
 import styles from './body.module.css'
 
-export const Body: FC<IChildrenProps> = ({ children }) => (
+export const Body = ({ children }: PropsWithChildren) => (
 	<p className={styles.body}>{children}</p>
 )
