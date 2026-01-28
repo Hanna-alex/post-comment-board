@@ -1,4 +1,3 @@
-import type { FC } from 'react'
 import { useMemo, useState } from 'react'
 import { PostListWithLoading } from '../../widgets'
 import { filterByLength } from '../../features/PostLengthFilter/lib/filterByLength'
@@ -6,9 +5,7 @@ import { PostLengthFilter } from '../../features'
 import { ContentWrapper } from '../../shared/layouts'
 import { usePosts } from '../../features/PostList'
 
-// import { setMinLengthFilter, selectMinLengthFilter } from '../../entities'
-
-export const PostsPage: FC = () => {
+export const PostsPage = () => {
 	const { posts, loading } = usePosts()
 	const [minLengthValue, setValue] = useState(0)
 

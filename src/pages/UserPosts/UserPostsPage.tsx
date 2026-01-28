@@ -1,10 +1,9 @@
-import type { FC } from 'react'
 import { useParams } from 'react-router-dom'
 import { postsApi } from '../../entities'
 import { ContentWrapper } from '../../shared/layouts'
 import { PostList } from '../../widgets'
 
-export const UserPostsPage: FC = () => {
+export const UserPostsPage = () => {
 	const { id } = useParams()
 	const { useGetPostsByUserIdQuery } = postsApi
 

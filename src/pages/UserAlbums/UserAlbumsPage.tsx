@@ -1,3 +1,1 @@
-import type { FC } from 'react'
-
-export const UserAlbumsPage: FC = () => <div>User albums page</div>
+export const UserAlbumsPage = () => <div>User albums page</div>

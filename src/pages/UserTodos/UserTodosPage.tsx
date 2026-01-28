@@ -1,3 +1,1 @@
-import type { FC } from 'react'
-
-export const UserTodosPage: FC = () => <div>User todos page</div>
+export const UserTodosPage = () => <div>User todos page</div>

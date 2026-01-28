@@ -1,10 +1,9 @@
-import type { FC } from 'react'
 import { useParams } from 'react-router-dom'
 import { postsApi, commentsApi } from '../../entities'
 import { CommentList } from '../../widgets'
 import { ContentWrapper } from '../../shared/layouts'
 
-export const PostDetailPage: FC = () => {
+export const PostDetailPage = () => {
 	const { id } = useParams()
 	const { useGetPostByIdQuery } = postsApi
 	const { useGetCommentsByPostIdQuery } = commentsApi
